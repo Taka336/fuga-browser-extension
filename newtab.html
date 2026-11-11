@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="dark" />
+    <title>漢詩のひととき</title>
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <link rel="stylesheet" href="newtab.css" />
+    <script src="newtab.js" defer></script>
+  </head>
+  <body>
+    <img class="scene-image" id="artwork" alt="" />
+    <div class="scene-vignette" aria-hidden="true"></div>
+
+    <main class="scene-stage">
+      <section class="scene-content is-view is-active" aria-labelledby="work-title">
+        <div class="poem-view">
+          <div class="poem-view-composition">
+            <div class="poem" id="poem" aria-label="漢詩の原文"></div>
+            <div class="work-heading">
+              <h1 class="work-title" id="work-title" aria-live="polite">作品を読み込んでいます</h1>
+              <div class="work-author">
+                <span class="author-rule" aria-hidden="true"></span>
+                <p class="work-author-name" id="work-author"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <a
+      class="work-link"
+      id="work-link"
+      href="https://kanshi.page/"
+      aria-label="作品ページをひらく"
+      data-tooltip="作品ページをひらく"
+      hidden
+    >
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M13 5h6v6" />
+        <path d="m19 5-9 9" />
+        <path d="M19 13v5a1 1 0 0 1-1 1H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h5" />
+      </svg>
+    </a>
+  </body>
+</html>
