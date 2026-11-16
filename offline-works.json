@@ -1,0 +1,89 @@
+{
+  "version": 1,
+  "works": [
+    {
+      "id": "shunbo",
+      "title": "春望",
+      "author": "杜甫",
+      "image": "assets/offline/works/shunbo.webp",
+      "imageAlt": "春の花と草木が生い茂る崩れた城壁のそばを鳥が飛び、遠くに山河が霞む情景",
+      "lines": [
+        "国破山河在",
+        "城春草木深",
+        "感時花濺涙",
+        "恨別鳥驚心",
+        "烽火連三月",
+        "家書抵万金",
+        "白頭掻更短",
+        "渾欲不勝簪"
+      ]
+    },
+    {
+      "id": "rokusai",
+      "title": "鹿柴",
+      "author": "王維",
+      "image": "assets/offline/works/rokusai.webp",
+      "imageAlt": "深い山林で木々の間から夕日が差し込み、古木の根元や苔むした岩を照らす情景",
+      "lines": [
+        "空山不見人",
+        "但聞人語響",
+        "返景入深林",
+        "復照青苔上"
+      ]
+    },
+    {
+      "id": "sohatsu-hakuteijo",
+      "title": "早発白帝城",
+      "author": "李白",
+      "image": "assets/offline/works/sohatsu-hakuteijo.webp",
+      "imageAlt": "朝焼けの雲に包まれた崖上の白帝城を背に小舟が峡谷を下り、木々の間に猿が見える情景",
+      "lines": [
+        "朝辞白帝彩雲間",
+        "千里江陵一日還",
+        "両岸猿声啼不住",
+        "軽舟已過万重山"
+      ]
+    },
+    {
+      "id": "gyuo",
+      "title": "漁翁",
+      "author": "柳宗元",
+      "image": "assets/offline/works/gyuo.webp",
+      "imageAlt": "朝霧の晴れた湘江を小舟が下り、岩山の上で白雲が流れる情景",
+      "lines": [
+        "漁翁夜傍西巖宿",
+        "暁汲清湘燃楚竹",
+        "煙銷日出不見人",
+        "欸乃一声山水緑",
+        "回看天際下中流",
+        "巖上無心雲相逐"
+      ]
+    },
+    {
+      "id": "baika",
+      "title": "梅花",
+      "author": "王安石",
+      "image": "assets/offline/works/baika.webp",
+      "imageAlt": "冷たい空気に包まれた古い白壁の隅で、葉のない梅の枝に白い花がひっそり咲く情景",
+      "lines": [
+        "牆角数枝梅",
+        "凌寒独自開",
+        "遥知不是雪",
+        "為有暗香来"
+      ]
+    },
+    {
+      "id": "shunjitsu",
+      "title": "春日",
+      "author": "朱熹",
+      "image": "assets/offline/works/shunjitsu.webp",
+      "imageAlt": "春風の吹く泗水の岸辺に色とりどりの花が咲き、景色が新たに輝く情景",
+      "lines": [
+        "勝日尋芳泗水浜",
+        "無辺光景一時新",
+        "等閑識得東風面",
+        "萬紫千紅総是春"
+      ]
+    }
+  ]
+}

@@ -1,4 +1,5 @@
 const FEED_URL = 'https://kanshi.page/works-feed.json'
+const OFFLINE_FEED_URL = './offline-works.json'
 const LAST_WORK_KEY = 'fuga-last-work-id'
 
 const elements = {
@@ -80,34 +81,58 @@ function renderWork(work) {
   document.title = `${work.title} — 漢詩のひととき`
 }
 
-async function loadWorks() {
-  try {
-    const response = await fetch(FEED_URL, { cache: 'no-store' })
-    if (!response.ok) throw new Error(`作品一覧の取得に失敗しました (${response.status})`)
-    const feed = await response.json()
-    if (feed?.version !== 1 || !Array.isArray(feed.works) || feed.works.length === 0) {
-      throw new Error('作品一覧の形式が正しくありません')
-    }
-
-    const works = feed.works.filter((work) => (
-      typeof work?.id === 'string'
-      && typeof work?.title === 'string'
-      && typeof work?.author === 'string'
-      && typeof work?.image === 'string'
-      && typeof work?.imageAlt === 'string'
-      && Array.isArray(work?.lines)
-      && work.lines.length > 0
-      && work.lines.length <= 10
-      && work.lines.every((line) => typeof line === 'string')
-    ))
-    if (works.length === 0) throw new Error('表示できる作品がありません')
-
-    const work = chooseWork(works, localStorage.getItem(LAST_WORK_KEY))
-    renderWork(work)
-    localStorage.setItem(LAST_WORK_KEY, work.id)
-  } catch (error) {
-    console.error('新しいタブの作品を読み込めませんでした', error)
+function validateWorksFeed(feed) {
+  if (feed?.version !== 1 || !Array.isArray(feed.works) || feed.works.length === 0) {
+    throw new Error('作品一覧の形式が正しくありません')
   }
+
+  const works = feed.works.filter((work) => (
+    typeof work?.id === 'string'
+    && typeof work?.title === 'string'
+    && typeof work?.author === 'string'
+    && typeof work?.image === 'string'
+    && typeof work?.imageAlt === 'string'
+    && Array.isArray(work?.lines)
+    && work.lines.length > 0
+    && work.lines.length <= 10
+    && work.lines.every((line) => typeof line === 'string')
+  ))
+  if (works.length === 0) throw new Error('表示できる作品がありません')
+  return works
+}
+
+async function fetchWorks(url, options) {
+  const response = await fetch(url, options)
+  if (!response.ok) throw new Error(`作品一覧の取得に失敗しました (${response.status})`)
+  return validateWorksFeed(await response.json())
+}
+
+async function loadWorks() {
+  let works = []
+
+  if (navigator.onLine) {
+    try {
+      works = await fetchWorks(FEED_URL, {
+        cache: 'no-store',
+        signal: AbortSignal.timeout(2500),
+      })
+    } catch (error) {
+      console.info('オンライン作品フィードを利用できないため、同梱作品を表示します', error)
+    }
+  }
+
+  if (works.length === 0) {
+    try {
+      works = await fetchWorks(OFFLINE_FEED_URL, { cache: 'force-cache' })
+    } catch (error) {
+      console.error('オフライン作品を読み込めませんでした', error)
+      return
+    }
+  }
+
+  const work = chooseWork(works, localStorage.getItem(LAST_WORK_KEY))
+  renderWork(work)
+  localStorage.setItem(LAST_WORK_KEY, work.id)
 }
 
 loadWorks()
