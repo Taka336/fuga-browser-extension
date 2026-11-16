@@ -18,7 +18,7 @@
 
 ## 作品データの更新
 
-作品フィードは `fuga-web` の `npm run build` で `dist/works-feed.json` に生成されます。題名の折り返し位置もフィードに含まれるため、`fuga-web` を再ビルド・デプロイすると拡張機能側の更新なしで反映されます。フォントも同じビルドで更新され、オンライン作品用フォントは `dist/fonts/extension/` に出力されます。オフライン作品用の小さなフォントサブセットは `assets/fonts/` に自動反映されます。フィードの出力処理は `fuga-web/scripts/prerender.mjs`、フォントの出力処理は `fuga-web/scripts/generate-extension-fonts.mjs`、公開時のCORSヘッダーは `fuga-web/public/_headers` で管理しています。
+作品フィードは `fuga-web` の `npm run build` で `dist/works-feed.json` に生成されます。題名の折り返し位置もフィードに含まれるため、`fuga-web` を再ビルド・デプロイすると拡張機能側の更新なしで反映されます。フォントも同じビルドで更新され、オンライン作品用フォントは `dist/fonts/extension/` に出力されます。両リポジトリを隣接して配置した開発環境では、オフライン作品用の小さなフォントサブセットも `assets/fonts/` に自動反映されます。Web版だけをビルドする環境では、公開用フォントのみ生成します。フィードの出力処理は `fuga-web/scripts/prerender.mjs`、フォントの出力処理は `fuga-web/scripts/generate-extension-fonts.mjs`、公開時のCORSヘッダーは `fuga-web/public/_headers` で管理しています。
 
 オフライン用の作品データは `offline-works.json`、画像は `assets/offline/works/` に同梱しています。
 
