@@ -1,0 +1,63 @@
+@font-face {
+  font-family: 'Shippori Mincho';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('https://kanshi.page/fonts/extension/shippori-mincho-400.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Shippori Mincho Offline';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('./shippori-mincho-400.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Shippori Mincho';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('https://kanshi.page/fonts/extension/shippori-mincho-500.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Shippori Mincho Offline';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('./shippori-mincho-500.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Shippori Mincho';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('https://kanshi.page/fonts/extension/shippori-mincho-600.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Shippori Mincho Offline';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('./shippori-mincho-600.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Yuji Syuku';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('https://kanshi.page/fonts/extension/yuji-syuku-400.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Yuji Syuku Offline';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('./yuji-syuku-400.woff2') format('woff2');
+}

@@ -12,13 +12,13 @@
 
 新しいタブを置き換える他の拡張機能が有効な場合は、Chrome の案内に従って使用する拡張機能を選んでください。
 
-作品ページと同じ縦書きの配置と書体を使い、Shippori Mincho・Yuji Syuku のフォントファイルは拡張機能内に同梱しています。フォントのライセンスは `assets/fonts/` にあります。
+作品ページと同じ縦書きの配置と書体を使います。オフライン用6作品とUIに必要なShippori Mincho・Yuji Syukuの文字だけは拡張機能に同梱し、それ以外の文字を含むフォントは `https://kanshi.page/fonts/extension/` から取得します。ネットワークに接続できない場合も、オフライン用6作品は同梱フォントで表示できます。フォントのライセンスは `assets/fonts/` にあります。
 
 タブのファビコンには Web 版と同じ `favicon.svg` を使い、拡張機能の各サイズのアイコンは Web 版と同じ `icon-192.png` を縮小して作成しています。
 
 ## 作品データの更新
 
-作品フィードは `fuga-web` の `npm run build` で `dist/works-feed.json` に生成されます。題名の折り返し位置もフィードに含まれるため、`fuga-web` を再ビルド・デプロイすると拡張機能側の更新なしで反映されます。フィードの出力処理は `fuga-web/scripts/prerender.mjs`、公開時のCORSヘッダーは `fuga-web/public/_headers` で管理しています。
+作品フィードは `fuga-web` の `npm run build` で `dist/works-feed.json` に生成されます。題名の折り返し位置もフィードに含まれるため、`fuga-web` を再ビルド・デプロイすると拡張機能側の更新なしで反映されます。フォントも同じビルドで更新され、オンライン作品用フォントは `dist/fonts/extension/` に出力されます。オフライン作品用の小さなフォントサブセットは `assets/fonts/` に自動反映されます。フィードの出力処理は `fuga-web/scripts/prerender.mjs`、フォントの出力処理は `fuga-web/scripts/generate-extension-fonts.mjs`、公開時のCORSヘッダーは `fuga-web/public/_headers` で管理しています。
 
 オフライン用の作品データは `offline-works.json`、画像は `assets/offline/works/` に同梱しています。
 

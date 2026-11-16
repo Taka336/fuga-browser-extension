@@ -17,6 +17,6 @@
     "https://kanshi.page/*"
   ],
   "content_security_policy": {
-    "extension_pages": "default-src 'self'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self' https://kanshi.page; connect-src 'self' https://kanshi.page; object-src 'none'"
+    "extension_pages": "default-src 'self'; script-src 'self'; style-src 'self'; font-src 'self' https://kanshi.page; img-src 'self' https://kanshi.page; connect-src 'self' https://kanshi.page; object-src 'none'"
   }
 }

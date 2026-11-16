@@ -1,36 +1,4 @@
 @font-face {
-  font-family: 'Shippori Mincho';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url('./assets/fonts/shippori-mincho-400.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'Shippori Mincho';
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src: url('./assets/fonts/shippori-mincho-500.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'Shippori Mincho';
-  font-style: normal;
-  font-weight: 600;
-  font-display: swap;
-  src: url('./assets/fonts/shippori-mincho-600.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'Yuji Syuku';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url('./assets/fonts/yuji-syuku-400.woff2') format('woff2');
-}
-
-@font-face {
   font-family: 'Poem Supplement';
   font-style: normal;
   font-weight: 400 600;
@@ -49,7 +17,7 @@
 }
 
 :root {
-  font-family: 'Shippori Mincho', 'Poem Supplement', 'Yu Mincho', 'Hiragino Mincho ProN', 'Noto Serif JP', serif;
+  font-family: 'Shippori Mincho Offline', 'Shippori Mincho', 'Poem Supplement', 'Yu Mincho', 'Hiragino Mincho ProN', 'Noto Serif JP', serif;
   color: #24211d;
   background: #ded3c2;
   font-synthesis: none;
@@ -173,7 +141,7 @@ a {
 .poem-line,
 .work-title,
 .work-author-name {
-  font-family: 'Yuji Syuku', 'Shippori Mincho', 'Poem Supplement', 'Yu Mincho', 'Hiragino Mincho ProN', 'Noto Serif JP', serif;
+  font-family: 'Yuji Syuku Offline', 'Yuji Syuku', 'Shippori Mincho Offline', 'Shippori Mincho', 'Poem Supplement', 'Yu Mincho', 'Hiragino Mincho ProN', 'Noto Serif JP', serif;
 }
 
 .poem-line {
